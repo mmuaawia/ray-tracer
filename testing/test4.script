@@ -1,0 +1,43 @@
+// reflection, refraction, multiple lights, and shadows test
+// 4 spheres and 2 lights over checkered cube
+
+// generate checkered cube
+translate 0 -2.5 0
+scale 10 1 10
+material 1 0 0  .2 .8 0 1   0 0 1   1
+cube
+
+// yellow diffuse sphere
+initTM
+translate -4 0 0
+rotate x -160
+scale .8 .8 .8
+material 1 1 0 .2 .8 0 1
+sphere
+
+// mirrored sphere
+initTM
+translate -1.1 0 0
+material 1 1 1 .01 .01 .9 50 0.9 0 1
+sphere
+
+// green specular sphere
+initTM
+translate 1.1 0 0
+material 0 1 0 .2 .6 .8 50
+sphere
+
+// glass ball
+initTM
+translate 3.5 0 0
+material 1 1 1 .01 .01 .9 50   0.0 0.9 1.5
+sphere
+
+light 50 100 0 10000
+light -100 100 0 7000
+
+camera 0 1.3 5  0 0 0
+perspective 2 1 1
+
+trace 512 256 PIC4.tiff
+quit

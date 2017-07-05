@@ -1,0 +1,6 @@
+material 1 0 0  .2 .6 .7 50
+sphere
+light 5 10 5 100
+camera 0 0 10 0 0 0
+perspective 1 1 3
+trace 256 256 PIC1.tiff
